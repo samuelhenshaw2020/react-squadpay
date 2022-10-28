@@ -1,9 +1,10 @@
 
+
 interface Metadata {
     [key: string]: any
 }
 
-type PaymentChannelsType = 'card'| 'bank' | 'ussd'|'bank_transfer';
+type PaymentChannelsType = 'card'| 'bank' | 'ussd' | 'bank_transfer';
 
 type CurrencyType = "NGN" | "USD"
 
@@ -20,7 +21,7 @@ export interface PaymentParams {
     paymentChannels?: PaymentChannelsType[] | null
 }
 
-export interface PaymentProps {
+export interface SquadPayProps {
     className?: string,
     text?: string,
     children?: any,
