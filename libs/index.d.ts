@@ -1,5 +1,6 @@
 
 declare module "react-squadpay"{
+    
     interface Metadata {
         [key: string]: any
     }
@@ -9,11 +10,11 @@ declare module "react-squadpay"{
     type CurrencyType = "NGN" | "USD"
 
     
-    export interface SquadParams {
+    export declare interface SquadParams {
         key: string,
         email: string,
         amount: number,
-        currencyCode: CurrencyType | string, 
+        currencyCode: CurrencyType | string | null, 
         metaData?: Metadata | null,
         passCharge?: boolean | null,
         callbackUrl?: string | null,
@@ -22,7 +23,7 @@ declare module "react-squadpay"{
         paymentChannels?: PaymentChannelsType[] | null
     }
     
-    export interface SquadPayProps {
+    export declare interface SquadPayProps {
         className?: string,
         text?: string,
         children?: any,
@@ -32,7 +33,8 @@ declare module "react-squadpay"{
         onSuccess?(data: any): void
     }
 
-    export default  function SquadPay(props: SquadPayProps)
+    declare function SquadPay(props: SquadPayProps);
+    export default SquadPay;
 
     
 }

@@ -18,7 +18,7 @@ export interface SquadParams {
     key: string,
     email: string,
     amount: number,
-    currencyCode: CurrencyType | string, 
+    currencyCode: CurrencyType | string | null, 
     metaData?: Metadata | null,
     passCharge?: boolean | null,
     callbackUrl?: string | null,

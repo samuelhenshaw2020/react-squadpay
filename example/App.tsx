@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import SquadPay from "../libs"
+import SquadPay, {SquadParams} from "../libs"
 
 function App() {
 
-  const params = {
+  const params: SquadParams = {
     key: "test_pk_sample-public-key-1",
     email: "example@mail.com", // from HTML form
     amount: 5000, // no need to multiply by 100 for kobo, its taken care for you
     currencyCode: "NGN",
-    reference: Date.now().toString()
+    reference: Date.now().toString(),
   }
 
   const Close = () => {

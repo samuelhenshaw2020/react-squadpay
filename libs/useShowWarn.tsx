@@ -10,7 +10,7 @@ const useShowWarn = (div: HTMLDivElement | null) => {
         div.style.width = "100%"
         div.style.top = "0px"
         div.style.textAlign = "center";
-        const p = document.createElement("p");
+        let p = document.createElement("p");
         p.innerText = "Ooop! There seems to be an issue. please reload and try again!"
         p.style.fontWeight = "700"
         const button = document.createElement("button")
@@ -25,8 +25,10 @@ const useShowWarn = (div: HTMLDivElement | null) => {
         button.style.borderRadius = "0.25rem";
         button.style.transition =  "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
         button.onclick = function(){
-            document.body.removeChild(div as any);
             div = null;
+            (p as any) = null;
+            (button as any) = null;
+            document.body.removeChild(div as any);
         }
         div.appendChild(p)
         div.appendChild(button)

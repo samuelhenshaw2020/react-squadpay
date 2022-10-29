@@ -6,13 +6,13 @@ import useSquadScript from "./useSquadScript";
 
 declare var squad: any;
 
+
 const SquadPay: React.FC<SquadPayProps> = ({children, className, text, params,  onClose, onLoad, onSuccess}) => {
 
     const loaded = useSquadScript();
     let div: HTMLDivElement | null = null;
-    const showWarning = useShowWarn(div);
 
-   
+    const showWarning = useShowWarn(div);
 
     function Pay() {
         if(!loaded) { 

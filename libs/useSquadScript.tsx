@@ -1,43 +1,38 @@
 import { useEffect, useState } from "react";
 
 const useSquadScript = () => {
+
     const [loaded, setLoaded] = useState<boolean>(false);
     let isMounted = true; // to prevent use effect initializing twice
-    const src =  "https://checkout.squadco.com/widget/squad.min.js";
-
+   
     useEffect(() => {
+        function LoadScript(){
+            const src =  "https://checkout.squadco.com/widget/squad.min.js";
 
-        const onLoad  = () => {
-            setLoaded(true)
-            script.removeEventListener('error', onError);
-            script.removeEventListener('load', onLoad);
-        };
-        
-        const onError = () => {
-            setLoaded(false)
-            script.removeEventListener('error', onError);
-            script.removeEventListener('load', onLoad);
-        };
+            const script: HTMLScriptElement  = document.createElement('script');
 
+            const onLoad  = () => {
+                setLoaded(true)
+                script.removeEventListener('error', onError);
+                script.removeEventListener('load', onLoad);
+            };
+            
+            const onError = () => {
+                setLoaded(false)
+                script.removeEventListener('error', onError);
+                script.removeEventListener('load', onLoad);
+            };
+            script.src = src;
+            console.log(src)
 
+    
+            script.async = true;
+            script.setAttribute("data-testid", "squad-script") //for testing purposes
 
-        const script: HTMLScriptElement  = document.createElement('script');
-
-        const LoadScript =  (): void => {
-
-                script.src = src;
-        
-                script.async = true;
-
-                script.setAttribute("data-testid", "squad-script")
-
-                document.body.appendChild(script)
-
-                script.addEventListener('load', onLoad)
-        
-                script.addEventListener('error', onError)
-                
-               
+            document.body.appendChild(script)
+            script.addEventListener('load', onLoad)
+    
+            script.addEventListener('error', onError)
         }
 
         if(isMounted) LoadScript(); 
