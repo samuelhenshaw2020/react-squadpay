@@ -26,8 +26,6 @@ const useShowWarn = (div: HTMLDivElement | null) => {
         button.style.transition =  "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
         button.onclick = function(){
             div = null;
-            (p as any) = null;
-            (button as any) = null;
             document.body.removeChild(div as any);
         }
         div.appendChild(p)

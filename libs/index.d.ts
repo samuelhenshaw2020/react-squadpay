@@ -10,7 +10,7 @@ declare module "react-squadpay"{
     type CurrencyType = "NGN" | "USD"
 
     
-    export declare interface SquadParams {
+    export interface SquadParams {
         key: string,
         email: string,
         amount: number,
@@ -23,7 +23,7 @@ declare module "react-squadpay"{
         paymentChannels?: PaymentChannelsType[] | null
     }
     
-    export declare interface SquadPayProps {
+    export interface SquadPayProps {
         className?: string,
         text?: string,
         children?: any,
