@@ -21,19 +21,22 @@ const useSquadScript = () => {
 
 
 
-        const script: HTMLScriptElement = document.createElement('script');
+        const script: HTMLScriptElement  = document.createElement('script');
 
         const LoadScript =  (): void => {
 
                 script.src = src;
         
                 script.async = true;
-            
+
+                script.setAttribute("data-testid", "squad-script")
+
                 document.body.appendChild(script)
 
                 script.addEventListener('load', onLoad)
         
                 script.addEventListener('error', onError)
+                
                
         }
 
@@ -49,3 +52,4 @@ const useSquadScript = () => {
 
 
 export default useSquadScript;
+

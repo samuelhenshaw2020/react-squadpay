@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SquadPay from "../libs"
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
   const Close = () => {
     console.log("Widget closed")
-  }
+  } 
 
   const Load = () => {
     console.log("Widget Loaded")
@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div> 
         <SquadPay className='btn btn-success' text='Pay now' params={params} onClose={Close} onLoad={Load} onSuccess={(res)=>Success(res)} />
     </div>
   )

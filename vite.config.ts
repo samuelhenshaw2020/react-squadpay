@@ -1,12 +1,22 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import {resolve} from "path";
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from "vite-plugin-dts"
+import {configDefaults} from "vitest/config"
 
 // https://vitejs.dev/config/
 export default defineConfig({  
   publicDir: resolve(__dirname, "example", "public"),
   // root: resolve(__dirname, 'example'),
+  test: {
+    exclude: [...configDefaults.exclude, "example/**/*", ".image/*", ".husky/*"],
+    // include: ['libs/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+    globals: true,
+    environment: "jsdom"
+  },
   server: {
     port: 3000
   },
