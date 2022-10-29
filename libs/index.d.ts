@@ -32,7 +32,7 @@ declare module "react-squadpay"{
         onSuccess?(data: any): void
     }
 
-    export function SquadPay(): React.FC<SquadPayProps>
+    export default  function SquadPay(props: SquadPayProps)
 
     
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {SquadPay} from "../libs"
+import SquadPay from "../libs"
 
 function App() {
 
