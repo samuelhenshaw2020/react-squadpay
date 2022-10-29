@@ -6,9 +6,15 @@ interface Metadata {
 
 type PaymentChannelsType = 'card'| 'bank' | 'ussd' | 'bank_transfer';
 
-type CurrencyType = "NGN" | "USD"
+type CurrencyType = "NGN" | "USD";
 
-export interface PaymentParams {
+
+export type Squad =  {
+    setup(): void,
+    open(): void
+}
+
+export interface SquadParams {
     key: string,
     email: string,
     amount: number,
@@ -25,7 +31,7 @@ export interface SquadPayProps {
     className?: string,
     text?: string,
     children?: any,
-    params: PaymentParams,
+    params: SquadParams,
     onClose?(): void
     onLoad?(): void,
     onSuccess?(data: any): void

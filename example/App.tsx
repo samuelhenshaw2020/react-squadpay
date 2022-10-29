@@ -4,13 +4,11 @@ import SquadPay from "../libs"
 function App() {
 
   const params = {
-    key: "sandbox_pk_570ae070b2d3c21cc0bf84416927b74e3323d0203686",
-    //Change key (test_pk_sample-public-key-1) to the key on your Squad Dashboard
-    email: "samuelhenshaw2020@gmail.com",
-    amount: 5000,
-    //Enter amount in Naira or Dollar (Base value Kobo/cent already multiplied by 100)
-    currencyCode: "NGN"
-
+    key: "test_pk_sample-public-key-1",
+    email: "example@mail.com", // from HTML form
+    amount: 5000, // no need to multiply by 100 for kobo, its taken care for you
+    currencyCode: "NGN",
+    reference: Date.now().toString()
   }
 
   const Close = () => {
@@ -21,16 +19,18 @@ function App() {
     console.log("Widget Loaded")
   }
 
-  const Success = (data: any) => {
+  /**
+   * @param {object} data
+   * @description  reponse when payment is successful
+   */
+  const Success = (data) => {
     console.log(data)
     console.log("Widget success")
   }
 
   return (
-    <div  className='p-5'>
-        <h1>GTCO SQUAD</h1>
-        <SquadPay className='btn btn-primary' text='Pay Now now' params={params} onClose={Close} onLoad={Load} onSuccess={(d: any)=>Success(d)} />
-        
+    <div>
+        <SquadPay className='btn btn-success' text='Pay now' params={params} onClose={Close} onLoad={Load} onSuccess={(res)=>Success(res)} />
     </div>
   )
 }

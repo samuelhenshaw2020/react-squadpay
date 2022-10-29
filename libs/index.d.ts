@@ -7,7 +7,7 @@ type PaymentChannelsType = 'card'| 'bank' | 'ussd'|'bank_transfer';
 
 type CurrencyType = "NGN" | "USD"
 
-export interface PaymentParams {
+export interface SquadParams {
     key: string,
     email: string,
     amount: number,
@@ -20,11 +20,11 @@ export interface PaymentParams {
     paymentChannels?: PaymentChannelsType[] | null
 }
 
-export interface PaymentProps {
+export interface SquadPayProps {
     className?: string,
     text?: string,
     children?: any,
-    params: PaymentParams,
+    params: SquadParams,
     onClose?(): void
     onLoad?(): void,
     onSuccess?(data: any): void

@@ -1,27 +1,25 @@
 import React from "react";
-import { SquadPayProps } from "./types";
+import { Squad, SquadPayProps } from "./types";
 import useShowWarn from "./useShowWarn";
 import useSquadScript from "./useSquadScript";
 
-declare var squad: any;
 
+declare var squad: any;
 
 const SquadPay: React.FC<SquadPayProps> = ({children, className, text, params,  onClose, onLoad, onSuccess}) => {
 
     const loaded = useSquadScript();
     let div: HTMLDivElement | null = null;
-    let timer: any = null
     const showWarning = useShowWarn(div);
 
    
 
     function Pay() {
         if(!loaded) { 
-            if(!div){
-                showWarning()
-            }
+            if(!div) showWarning()
             return;
-        };
+        }
+        
         const _params = {
             onClose:  onClose,
             onLoad: onLoad,
@@ -40,9 +38,10 @@ const SquadPay: React.FC<SquadPayProps> = ({children, className, text, params,  
             pass_charge: params.passCharge || false
         }
 
-        const squadInstance: any = new squad(_params);
+        const squadInstance: Squad = new squad(_params);
         squadInstance.setup();
-        squadInstance.open();
+        squadInstance.open()
+         
     } 
 
 
