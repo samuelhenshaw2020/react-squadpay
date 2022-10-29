@@ -7,6 +7,7 @@ declare module "react-squadpay"{
     type PaymentChannelsType = 'card'| 'bank' | 'ussd'|'bank_transfer';
     
     type CurrencyType = "NGN" | "USD"
+
     
     export interface SquadParams {
         key: string,
@@ -30,5 +31,8 @@ declare module "react-squadpay"{
         onLoad?(): void,
         onSuccess?(data: any): void
     }
+
+    export function SquadPay(): React.FC<SquadPayProps>
+
     
 }
