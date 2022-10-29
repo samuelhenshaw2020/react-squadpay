@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SquadPay from "../libs"
+import {SquadPay} from "../libs"
 
 function App() {
 
@@ -30,7 +30,8 @@ function App() {
 
   return (
     <div> 
-        <SquadPay className='btn btn-success' text='Pay now' params={params} onClose={Close} onLoad={Load} onSuccess={(res)=>Success(res)} />
+      
+        <SquadPay  className='btn btn-success' text='Pay now' params={params} onClose={Close} onLoad={Load} onSuccess={(res)=>Success(res)} />
     </div>
   )
 }
