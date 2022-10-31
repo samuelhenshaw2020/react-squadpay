@@ -22,7 +22,6 @@ describe("SquadPay", () => {
         }
         render(<SquadPay params={params} text={"Pay Now"}  />);
         expect(screen.getByText("Pay Now")).toBeDefined();
-        fireEvent.click(screen.getByText("Pay Now"))
 
     });
 

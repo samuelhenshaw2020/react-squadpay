@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-squadpay": "^1.0.8"
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
@@ -46,10 +47,10 @@
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/samuelhenshaw2020/react-gtco-squad.git"
+    "url": "https://github.com/samuelhenshaw2020/react-squadpay.git"
   },
   "bugs": {
-    "url": "https://github.com/samuelhenshaw2020/react-gtco-squad/issues"
+    "url": "https://github.com/samuelhenshaw2020/react-squadpay/issues"
   },
   "author": {
     "name": "Samuel Henshaw"
@@ -66,7 +67,7 @@
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://github.com/samuelhenshaw2020/react-gtco-squad#readme",
+  "homepage": "https://github.com/samuelhenshaw2020/react-squadpay#readme",
   "license": "MIT",
   "access": "public"
 }
